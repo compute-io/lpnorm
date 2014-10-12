@@ -30,7 +30,7 @@ Computes the _p_-norm of an `array`, where `p` is an `integer` greater than `0`.
 var data = [ 3, 1, 9, 4, 4, 2 ];
 
 var len = lpnorm( data, 2 );
-// returns 
+// returns ~11.2694
 ```
 
 The default value of `p` is `2` (Euclidean norm).
@@ -77,7 +77,7 @@ $ node ./examples/index.js
 
 ## Notes
 
-__Warning__: Only specific _Lp_ norms properly consider overflow and underflow; i.e., _L1_, _L2_, and the infinity norms. For the general case, for large values of `p`, you may overflow.
+__Warning__: Only specific _Lp_ norms properly consider overflow and underflow; i.e., _L1_, _L2_, and the infinity norms. In the general case, you may overflow for large values of `p`.
 
 
 ## Tests
