@@ -2,7 +2,7 @@ lpnorm
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Computes the Lp norm of an array of values.
+> Computes the [_Lp_ norm](http://en.wikipedia.org/wiki/Norm_(mathematics)) of an array of values.
 
 
 ## Installation
@@ -19,14 +19,53 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var lib = require( 'compute-lpnorm' );
+var lpnorm = require( 'compute-lpnorm' );
 ```
+
+#### lpnorm( arr[, p] )
+
+Computes the _p_-norm of an `array`, where `p` is an `integer` greater than `0`.
+
+``` javascript
+var data = [ 3, 1, 9, 4, 4, 2 ];
+
+var len = lpnorm( data, 2 );
+// returns 
+```
+
+The default value of `p` is `2` (Euclidean norm).
+
+
+#### Special Cases
+
+When `p = 1`, the norm is the `L1`, or so-called [Taxicab norm](http://en.wikipedia.org/wiki/Norm_(mathematics)).
+
+When `p = 2`, the norm is the `L2`, or [Euclidean norm](http://en.wikipedia.org/wiki/Norm_(mathematics)).
+
+When `p = infinity`, the norm is the [maximum norm](http://en.wikipedia.org/wiki/Norm_(mathematics)).
 
 
 ## Examples
 
 ``` javascript
-var lib = require( 'compute-lpnorm' );
+var lpnorm = require( 'compute-lpnorm' );
+
+var data = new Array( 1000 );
+for ( var i = 0; i < data.length; i++ ) {
+	data[ i ] = Math.random() * 100;
+}
+
+// Compute the L1 norm:
+console.log( 'L1: %d', lpnorm( data, 1 ) );
+
+// Compute the L2 norm:
+console.log( 'L2: %d', lpnorm( data, 2 ) );
+
+// Compute the L10 norm:
+console.log( 'L10: %d', lpnorm( data, 10 ) );
+
+// Compute the maximum norm:
+console.log( 'Sup: %d', lpnorm( data, Number.POSITIVE_INFINITY ) );
 ```
 
 To run the example code from the top-level application directory,
@@ -34,6 +73,11 @@ To run the example code from the top-level application directory,
 ``` bash
 $ node ./examples/index.js
 ```
+
+
+## Notes
+
+__Warning__: Only specific _Lp_ norms properly consider overflow and underflow; i.e., _L1_, _L2_, and the infinity norms. For the general case, for large values of `p`, you may overflow.
 
 
 ## Tests

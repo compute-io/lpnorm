@@ -25,12 +25,28 @@
   "keywords": [
     "compute.io",
     "compute",
-    "computation"
+    "computation",
+    "mathematics",
+    "math",
+    "linear algebra",
+    "norm",
+    "euclidean norm",
+    "l2norm",
+    "taxicab norm",
+    "manhattan norm",
+    "l1norm",
+    "supremum norm",
+    "chebyshev norm",
+    "maximum norm"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/lpnorm/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "compute-l1norm": "^1.0.0",
+    "compute-l2norm": "^1.0.1",
+    "validate.io-integer": "^1.0.0"
+  },
   "devDependencies": {
     "chai": "1.x.x",
     "mocha": "1.x.x",
