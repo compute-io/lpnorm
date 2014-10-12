@@ -71,6 +71,20 @@ describe( 'compute-lpnorm', function tests() {
 		}
 	});
 
+	it( 'should default to the L2 norm', function test() {
+		var data, d, sum, expected;
+
+		data = [ 3, 4, 20, -10, 0 ];
+		sum = 0;
+		for ( var i = 0; i < data.length; i++ ) {
+			d = data[ i ];
+			sum += d * d;
+		}
+		expected = Math.sqrt( sum );
+
+		assert.strictEqual( lpnorm( data ), expected );
+	});
+
 	it( 'should return the L1 norm', function test() {
 		var data, expected;
 
