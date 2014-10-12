@@ -38,11 +38,11 @@ The default value of `p` is `2` (Euclidean norm).
 
 #### Special Cases
 
-When `p = 1`, the norm is the `L1`, or so-called [Taxicab norm](http://en.wikipedia.org/wiki/Norm_(mathematics)).
+* `p = 1`: the norm is the `L1`, or so-called [Taxicab norm](http://en.wikipedia.org/wiki/Norm_(mathematics)).
 
-When `p = 2`, the norm is the `L2`, or [Euclidean norm](http://en.wikipedia.org/wiki/Norm_(mathematics)).
+* `p = 2`: the norm is the `L2`, or [Euclidean norm](http://en.wikipedia.org/wiki/Norm_(mathematics)).
 
-When `p = infinity`, the norm is the [maximum norm](http://en.wikipedia.org/wiki/Norm_(mathematics)).
+* `p = infinity`: the norm is the [maximum norm](http://en.wikipedia.org/wiki/Norm_(mathematics)).
 
 
 ## Examples
